@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "uart.h": "c",
+    "stdarg.h": "c"
+  },
+  "C_Cpp_Runner.msvcBatchPath": ""
+}
