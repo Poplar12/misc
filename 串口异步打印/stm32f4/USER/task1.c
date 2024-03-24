@@ -19,11 +19,11 @@ static void task1(void *p)
     {
         static int value = 10;
         notify_task(&task_2, &value);
-        my_printf("task_1 notify task_2\n");
+        LOG_INFO("task_1 notify task_2\n");
         count = 0;
-        my_printf("val = %d\n", val);
+        LOG_INFO("val = %d\n", val);
     }
-    my_printf("task1\r\n");
+    LOG_INFO("task1\r\n");
     
 }
 int a = 5;

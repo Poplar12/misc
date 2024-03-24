@@ -12,7 +12,7 @@ void task3(void *p)
         count = 0;
         delet_task(&task_2);
     }
-    my_printf("task3\r\n");
+    LOG_ERR("task3\r\n");
 }
 
 task_t task_3 = {

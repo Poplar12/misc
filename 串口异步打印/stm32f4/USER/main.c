@@ -18,8 +18,8 @@ int main(void)
         run_task();
         
         if(time_interval(&t1) > 1000)
-        {
-            my_printf("hello: %s, %s, %d\n", p, t, 100);
+        { 
+            LOG_DEBUG("hello: %s, %s, %d\n", p, t, 100);
             t1 = 0;
         }
     } 

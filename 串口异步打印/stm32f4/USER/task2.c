@@ -13,20 +13,20 @@ void task2(void *p)
     count++;
     if(count  > 100)
     {
-        my_printf("task2\r\n");
+        LOG_DEBUG("task2\r\n");
         count = 0;
     }
     if(count > 25)
     {
-        my_printf("delete by onself\n");
+        LOG_DEBUG("delete by onself\n");
         delet_task(&task_2);
         count = 0;
     }
     if(p != NULL)
     {
-        my_printf("p= %d\n", *(int*)p);
+        LOG_DEBUG("p= %d\n", *(int*)p);
     }
-    my_printf("task2\r\n");
+    LOG_DEBUG("task2\r\n");
 }
 
 __attribute__((constructor)) void task2_add()
