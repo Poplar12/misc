@@ -7,10 +7,12 @@ char* t = __TIME__;
 int main(void)
 {
     set_send_cb(read_data);
+    reg_transmit(start_transmit);
+
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
     uart_init(115200);
     bsTime_Init(1000-1, 83);//1ms÷–∂œ
-    
+
     while(1)
     {
         static unsigned int t1 = 0;

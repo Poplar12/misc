@@ -1,8 +1,11 @@
 #ifndef  PRINT_H
 #define  PRINT_H
 
+typedef void(*transmit)(void);
+
 int read_data(unsigned char *data);
 int my_printf(const char *fmt, ...);
+void reg_transmit(transmit cb);
  
 #define DEBUG   0
 #define ERR     1

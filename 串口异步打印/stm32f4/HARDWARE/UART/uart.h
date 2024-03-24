@@ -12,5 +12,6 @@
 typedef int(*uart_send)(unsigned char* data); 
 void uart_init(unsigned int bound);
 void set_send_cb(uart_send cb);
+void start_transmit(void);
 
 #endif

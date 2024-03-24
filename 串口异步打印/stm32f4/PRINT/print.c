@@ -2,10 +2,11 @@
 #include "que.h"
 #include "stdio.h"
 #include "stdarg.h"
-#include "stm32f4xx.h"
 
 #define BUF_SIZE   100
 creat_que(TX_buf, BUF_SIZE);
+
+transmit enable_transmit = 0;
 
 static void add_str(char *buf, unsigned int len)
 {
@@ -14,7 +15,11 @@ static void add_str(char *buf, unsigned int len)
     for(i = 0; i < len; i++) {
         InQue(TX_buf, *(buf + i));
     }
-    USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
+
+    if(enable_transmit)
+    {
+        enable_transmit();
+    }
 }
 
 int my_printf(const char *fmt, ...)
@@ -37,4 +42,9 @@ int my_printf(const char *fmt, ...)
 int read_data(unsigned char *data)
 {
     return OutQue(TX_buf, data);
+}
+
+void reg_transmit(transmit cb)
+{
+    enable_transmit = cb;
 }

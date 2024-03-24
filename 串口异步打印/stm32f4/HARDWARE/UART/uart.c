@@ -66,3 +66,8 @@ void set_send_cb(uart_send cb)
 {
     tx_cb = cb;
 }
+
+void start_transmit(void)
+{
+    USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
+}
