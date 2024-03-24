@@ -1,6 +1,6 @@
 #include "os.h"
 #include <stdio.h>
-#include "./UART/uart.h"
+#include "print.h"
 extern task_t task_2;
 void task3(void *p)
 {
@@ -17,8 +17,8 @@ void task3(void *p)
 
 task_t task_3 = {
     .task = task3,
-    .time_slice = 20,
-    .slice_count = 20,
+    .time_slice = 2000,
+    .slice_count = 2000,
 };
 
 __attribute__((constructor)) void task3_add()

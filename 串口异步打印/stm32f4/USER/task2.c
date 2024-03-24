@@ -1,11 +1,11 @@
 #include "os.h"
 #include <stdio.h>
-#include "./UART/uart.h"
+#include "print.h"
 void task2(void* p);
 task_t task_2 = {
     .task = task2,
-    .time_slice = 30,
-    .slice_count = 30,
+    .time_slice = 300,
+    .slice_count = 300,
 };
 void task2(void *p)
 {

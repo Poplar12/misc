@@ -1,36 +1,9 @@
 #include "./UART/uart.h"
-#include "stdio.h"
 #include "que.h"
-#include "uart.h"
-#include "stdarg.h"
+creat_que(RX_buf, 100);
 
-#define BUF_SIZE   100
-creat_que(TX_buf, BUF_SIZE);
-creat_que(RX_buf, BUF_SIZE);
+static uart_send tx_cb = 0;
 
-static void add_str(char *buf, unsigned int len)
-{
-    int i;
-
-    for(i = 0; i < len; i++) {
-        InQue(TX_buf, *(buf + i));
-    }
-    USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
-}
-
-int my_printf(const char *fmt, ...)
-{
-    va_list argptr;
-    static char buff[BUF_SIZE / 2]; /* 如果是裸机可以使用临时变量 */
-    int len = 0;
-
-    va_start(argptr, fmt);
-    len = vsnprintf(buff, BUF_SIZE / 2, fmt, argptr);
-    va_end(argptr);
-
-    add_str(buff, len);
-    return len;
-}
 void uart_init(unsigned int bound)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
@@ -81,10 +54,15 @@ void USART1_IRQHandler(void)
         InQue(RX_buf, USART_ReceiveData(USART1));           /*将数据放入接收缓冲区*/             
     }
     if (USART_GetITStatus(USART1, USART_IT_TXE) != RESET) {
-        if (OutQue(TX_buf, &data))      /*从缓冲区中取出数据---*/
+        if (tx_cb && tx_cb(&data))      /*从缓冲区中取出数据---*/
             USART_SendData(USART1, data);            
         else{
             USART_ITConfig(USART1, USART_IT_TXE, DISABLE);    
         }
     }
 } 
+
+void set_send_cb(uart_send cb)
+{
+    tx_cb = cb;
+}

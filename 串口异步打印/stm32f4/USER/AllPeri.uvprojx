@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\HARDWARE;..\FWLIB\inc;..\HARDWARE\LCD;..\OS;..\QUE</IncludePath>
+              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\HARDWARE;..\FWLIB\inc;..\HARDWARE\LCD;..\OS;..\QUE;..\PRINT</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -521,6 +521,16 @@
               <FileName>que.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\QUE\que.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>PRINT</GroupName>
+          <Files>
+            <File>
+              <FileName>print.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\PRINT\print.c</FilePath>
             </File>
           </Files>
         </Group>

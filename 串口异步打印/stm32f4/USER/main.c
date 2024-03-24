@@ -1,13 +1,15 @@
 #include "./UART/uart.h"
 #include "./BaseTime/basetime.h"
 #include "os.h"
+#include "print.h"
 char* p = __DATE__;
 char* t = __TIME__;
 int main(void)
-{ 
+{
+    set_send_cb(read_data);
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
     uart_init(115200);
-    bsTime_Init(1004, 80);//1ms÷–∂œ
+    bsTime_Init(1000-1, 83);//1ms÷–∂œ
     
     while(1)
     {

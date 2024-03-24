@@ -29,7 +29,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
-#include "./UART/uart.h"
+#include "print.h"
 
 /** @addtogroup Template_Project
   * @{

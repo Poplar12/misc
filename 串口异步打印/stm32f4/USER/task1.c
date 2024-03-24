@@ -1,12 +1,12 @@
 #include "os.h"
 #include <stdio.h>
-#include "./UART/uart.h"
+#include "print.h"
 static void task1(void *p);
 extern task_t task_2;
 static task_t task_1 = {
     .task = task1,
-    .time_slice = 50,
-    .slice_count = 50,
+    .time_slice = 500,
+    .slice_count = 500,
 };
 
 static void task1(void *p)
