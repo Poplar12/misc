@@ -39,8 +39,5 @@ int OutQue(que_t* que, unsigned char *val)
 
 int QueLen(que_t *que)
 {
-    if(que->head == que->tail) {
-        return que->len;
-    }
-    return (que->head < que->tail) ? que->len - (que->tail - que->head) : que->head - que->tail;
+    return (que->head <= que->tail) ? que->len - (que->tail - que->head) : que->head - que->tail;
 }
