@@ -325,7 +325,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
-            <uGnu>0</uGnu>
+            <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\HARDWARE;..\FWLIB\inc;..\HARDWARE\LCD;..\OS;..\QUE;..\PRINT;..\HARDWARE\DMA</IncludePath>
+              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\HARDWARE;..\FWLIB\inc;..\HARDWARE\LCD;..\OS;..\QUE;..\PRINT;..\HARDWARE\DMA;..\POOL</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -536,6 +536,21 @@
               <FileName>print.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\PRINT\print.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>POOL</GroupName>
+          <Files>
+            <File>
+              <FileName>pool.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\POOL\pool.c</FilePath>
+            </File>
+            <File>
+              <FileName>que_pool.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\POOL\que_pool.c</FilePath>
             </File>
           </Files>
         </Group>
