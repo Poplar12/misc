@@ -1,0 +1,30 @@
+SET PATH=E:\keil\ARM\ARMCC\Bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\vmware16\bin\;D:\STVD for STM8\asm;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\VScode\MinGW\mingw64\bin;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Nordic Semiconductor\nrf5x\bin\;C:\MinGW\bin;D:\python3.12.0\;D:\python3.12.0\Scripts\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;D:\Git\Git\cmd;D:\python3.12.0\Scripts\;D:\python3.12.0\;D:\VC++6.0\Tools\WinNT;D:\VC++6.0\MSDev98\Bin;D:\VC++6.0\Tools;D:\VC98\bin;C:\Users\YangLin\AppData\Local\Microsoft\WindowsApps;C:\MinGW\bin;E:\VScode\Microsoft VS Code\bin;
+SET CPU_TYPE=STM32F407ZG
+SET CPU_VENDOR=STMicroelectronics
+SET UV2_TARGET=peripheral
+SET CPU_CLOCK=0x0A037A00
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\main.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_it.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\system_stm32f4xx.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\led.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\beep.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\key.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\uart.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\exti.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\iwdg.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\sd_card.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\lcd.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\basetime.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\hal.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\rng.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\delay.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmAsm" --Via "..\obj\startup_stm32f40_41xxx._ia"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\misc.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_gpio.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_rcc.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_syscfg.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_usart.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_exti.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmCC" --Via "..\obj\stm32f4xx_iwdg.__i"
+"E:\keil\ARM\ARMCC\Bin\ArmLink" --Via "..\OBJ\LED.lnp"
+"E:\keil\ARM\ARMCC\Bin\fromelf.exe" "..\OBJ\LED.axf" --i32combined --output "..\OBJ\LED.hex"
