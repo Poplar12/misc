@@ -8,6 +8,7 @@ typedef enum
     ON,
     ON_3Times,
     BREATH,
+    LED_MODE_MAX,
 }ledsta_t;
 
 void analyze_led_state(void);

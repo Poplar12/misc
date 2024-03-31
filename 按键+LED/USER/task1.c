@@ -13,7 +13,7 @@ static void task1(void *p)
     int val = *(int*)p;
     static int count = 0;
     count++;
-    //printf("task1\n");
+    printf("task1\n");
     if(count > 2)
     {
         static int value = 10;

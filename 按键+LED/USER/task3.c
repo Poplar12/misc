@@ -6,9 +6,9 @@ void task3(void *p)
 {
     static int count = 0;
     count++;
-    if(count >= 50)
+    if(count >= 300)
     {
-        //printf("task3\r\n");
+        printf("task3\r\n");
         count = 0;
         delet_task(&task_2);
     }
