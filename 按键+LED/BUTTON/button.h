@@ -1,8 +1,8 @@
 #ifndef BUTTON_H
 #define BUTTON_H
+#include "export.h"
 
 #define SUPPORT_MULTI_CLICK         1      /* 支持多击 */
-
 
 typedef enum
 {
@@ -20,6 +20,12 @@ typedef enum
     PRESS_3TIMES,
 #endif
 }BtnEvt_t;
+
+/* 通过自动初始化将需要处理的事情注册过来 */
+typedef void(*bnt_cb)(BtnEvt_t evt);
+
+#define BNT_EVENT(obj, level)       static RT_USED const bnt_cb obj SECTION(".bnt_event." level)
+#define ADD_EVENT(obj)           BNT_EVENT(key_##obj, "0.1") = obj;
 
 typedef unsigned int (*SysTime)();
 

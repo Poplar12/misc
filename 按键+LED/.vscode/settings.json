@@ -58,6 +58,9 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "button.h": "c",
-    "que.h": "c"
-  }
+    "que.h": "c",
+    "list.h": "c",
+    "atomic": "cpp",
+    "cstdint": "cpp"
+}
 }

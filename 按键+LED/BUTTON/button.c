@@ -1,5 +1,19 @@
 #include "button.h"
 
+
+/* 注册函数存放位置 */
+BNT_EVENT(key_start, "0");
+BNT_EVENT(key_end, "1");
+/* 执行注册的事件 */
+static void handler(BtnEvt_t evt)
+{
+    const bnt_cb* ptr;
+    for(ptr = &key_start + 1; ptr != &key_end; ptr++)
+    {
+        (*ptr)(evt);
+    }
+}
+
 /* 获取定时器时间的回调 */
 static SysTime GetSysTime;
 void BtnInit(SysTime cb)
@@ -75,6 +89,6 @@ BtnEvt_t GetBtnEvt(Btn_t *Btn, BtnSta_t cur_sta)
         Btn->StartTime = systime;
         Btn->PreSta = KEY_RELEASE;
     }
-
+    handler(btn_sta);
     return btn_sta;
 }

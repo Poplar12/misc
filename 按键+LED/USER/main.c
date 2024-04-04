@@ -6,6 +6,36 @@
 #include "led.h"
 #include "./LED/bsp_led.h"
 
+void send_led_on(BtnEvt_t evt)
+{
+    if(evt == PRESS_SHORT)
+    {
+        send_led_state(ON);
+    }
+}
+ADD_EVENT(send_led_on);
+
+
+
+void send_led_3times(BtnEvt_t evt)
+{
+    if(evt == PRESS_200MS)
+    {
+        send_led_state(ON_3Times);
+    }
+}
+ADD_EVENT(send_led_3times);
+
+void send_led_breath(BtnEvt_t evt)
+{
+    if(evt == PRESS_2TIMES)
+    {
+        send_led_state(BREATH);
+    }
+}
+ADD_EVENT(send_led_breath);
+
+
 /* 创建按键任务 */
 void key_task(void* param)
 {
@@ -26,6 +56,8 @@ void key_task(void* param)
         key_device = 1;
     }
 
+    GetBtnEvt(&btn, (BtnSta_t)KEY0);
+#if 0
     switch(GetBtnEvt(&btn, (BtnSta_t)KEY0))
     {
         case PRESS_SHORT:
@@ -53,6 +85,8 @@ void key_task(void* param)
         default:
             break;
     }
+#endif
+
 }
 static task_t task_key = {
     .task = key_task,
